@@ -39,12 +39,13 @@ export default function Search()
             <form onSubmit={handleSubmit}>
                 <input type="text"
                         name="search"
+                        placeholder="enter the name of the book here"
                         value={formData}
                         onChange={handleChange}
                         ref={input}/>
                 <input type="submit" value="search"/>
             </form>
-            <DisplayBookInfo formData = {formData} />
+            {formData ? <DisplayBookInfo formData = {formData} /> : <div></div>}
         </div>
     )
 }
