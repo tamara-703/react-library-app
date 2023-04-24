@@ -40,8 +40,6 @@ export default function Search()
                 <input type="text"
                         name="search"
                         placeholder="enter the name of the book here"
-                        value={formData}
-                        onChange={handleChange}
                         ref={input}/>
                 <input type="submit" value="search"/>
             </form>
@@ -49,3 +47,6 @@ export default function Search()
         </div>
     )
 }
+
+// onChange={handleChange}
+//value={formData}

@@ -4,6 +4,7 @@ import Home from './Pages/Home';
 import MyLibrary from './Pages/MyLibrary';
 import Search from './Pages/Search';
 import ErrorPage from './Pages/ErrorPage';
+import DisplayTest from './Pages/DisplayTest'
 import Nav from './Components/Nav';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path='/' element={<Home />}></Route>
         <Route path='/mylibrary' element={<MyLibrary />}></Route>
         <Route path='/search' element={<Search />}></Route>
+        <Route path="/displayTest/:symbol" element={<DisplayTest />}></Route>
         <Route path='*' element={<ErrorPage />}></Route>
       </Routes>
 
