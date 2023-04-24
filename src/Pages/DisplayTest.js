@@ -10,31 +10,36 @@ export default function DisplayTest(props) {
     console.log(location)
     console.log(params)
 
-
-
-    // const fromDisplay = location.state;
-    // console.log("fromDisplay")
-    // console.log(fromDisplay)
-
   return (
     <div>
       <h1>This is the page where book information will be displayed</h1>
 
-      {/* {data ? (
-        data.map((data, index) => {
-          return (
-            <div>
-              <h1>Title: {data.volumeInfo.title}</h1>
-              <h3>Subtitle: {data.volumeInfo.subtitle}</h3>
-              <h5>Authors: {data.volumeInfo.authors}</h5>
-              <h6>Categories: {data.volumeInfo.categories}</h6>
-              <p>Description: {data.volumeInfo.description}</p>
-            </div>
-          );
-        })
-      ) : (
-        <div>No information found</div>
-      )} */}
+        {location.state ? <div>
+            <div>Title: {location.state.volumeInfo.title}</div>
+            <div>Authors: {location.state.volumeInfo.authors}</div>
+            <aside>
+                <img src= {location.state.volumeInfo.imageLinks.thumbnail} alt={location.state.title}></img>
+            </aside>
+        </div> : <div>No information found</div>}
+
     </div>
   );
 }
+
+
+
+// {location.state ? (
+//     location.state.map((data, index) => {
+//       return (
+//         <div>
+//           <h1>Title: {location.state.volumeInfo.title}</h1>
+//           <h3>Subtitle: {location.state.volumeInfo.subtitle}</h3>
+//           <h5>Authors: {location.state.volumeInfo.authors}</h5>
+//           <h6>Categories: {location.state.volumeInfo.categories}</h6>
+//           <p>Description: {location.state.volumeInfo.description}</p>
+//         </div>
+//       );
+//     })
+//   ) : (
+//     <div>No information found</div>
+//   )}
