@@ -7,6 +7,9 @@ import ErrorPage from './Pages/ErrorPage';
 import DisplayTest from './Pages/DisplayTest'
 import Nav from './Components/Nav';
 import { useState } from 'react';
+import Read from './Pages/Read';
+import CurrentlyReading from './Pages/CurrentlyReading';
+import WantToRead from './Pages/WantToRead';
 
 function App() {
 
@@ -31,6 +34,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/mylibrary' element={<MyLibrary bookCollection={bookCollection}/>}></Route>
+        <Route path='/read' element={<Read />}></Route>
+        <Route path="/currentlyreading" element={<CurrentlyReading />}></Route>
+        <Route path="/wanttoread" element={<WantToRead />}></Route>
         <Route path='/search' element={<Search />}></Route>
         <Route path="/displayTest/:symbol" element={<DisplayTest addBookFunction = {addBookFunction}/>}></Route>
         <Route path='*' element={<ErrorPage />}></Route>

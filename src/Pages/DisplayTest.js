@@ -55,7 +55,9 @@ export default function DisplayTest(props) {
             <aside>
                 <img src= {location.state.volumeInfo.imageLinks.thumbnail} alt={location.state.title}></img>
             </aside>
-            <button onClick={handleAdd}>Add to my library</button>
+            <button onClick={handleAdd}>Add to read</button>
+            <button onClick={handleAdd}>Add to want to read</button>
+            <button onClick={handleAdd}>Add to currently reading</button>
         </div> : <div>No information found</div>}
 
 
