@@ -6,11 +6,8 @@ import { Link } from "react-router-dom";
 export default function MyLibrary({bookCollection})
 {
 
-    console.log("in my library")
-    console.log(bookCollection[0]);
-
-    // const [currentlyreading, setCurrentlyReading] = useState([]);
-    // const [wantToRead, setWantToRead] = useState([]);
+    // console.log("in my library")
+    // console.log(bookCollection[0]);
 
     return (
         <div>

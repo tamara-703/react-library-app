@@ -52,6 +52,10 @@ export default function DisplayTest(props) {
         {location.state ? <div>
             <div>Title: {location.state.volumeInfo.title}</div>
             <div>Authors: {location.state.volumeInfo.authors}</div>
+            <div>Description: {location.state.volumeInfo.description}</div>
+            <div>Average rating: {location.state.volumeInfo.averageRating}</div>
+            <div>Publisher: {location.state.volumeInfo.publisher}</div>
+            <div>Published date: {location.state.volumeInfo.publishedDate}</div>
             <aside>
                 <img src= {location.state.volumeInfo.imageLinks.thumbnail} alt={location.state.title}></img>
             </aside>
@@ -64,3 +68,6 @@ export default function DisplayTest(props) {
     </div>
   );
 }
+{/* <li>Average rating: {item.averageRating}</li>
+                <li>Publisher: {item.publisher}</li>
+                <li>Published Date: {item.publishedDate}</li> */}
