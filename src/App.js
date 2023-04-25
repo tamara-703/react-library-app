@@ -13,14 +13,16 @@ import WantToRead from './Pages/WantToRead';
 
 function App() {
 
+  const [currentlyReading, setCurrentlyReading] = useState([]);
   const [bookCollection, setBookCollection] = useState([]);
 
   function addBookFunction(newBook)
   {
-    //console.log(newBook);
+
       let oldBookCollection = bookCollection;
 
-      oldBookCollection = [...bookCollection, newBook];
+      // console.log(newBook);
+      oldBookCollection = [...bookCollection, newBook[0]];
 
       setBookCollection(oldBookCollection);
   }
@@ -33,12 +35,12 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Home />}></Route>
-        <Route path='/mylibrary' element={<MyLibrary bookCollection={bookCollection}/>}></Route>
-        <Route path='/read' element={<Read />}></Route>
-        <Route path="/currentlyreading" element={<CurrentlyReading />}></Route>
+        <Route path='/mylibrary' element={<MyLibrary />}></Route>
+        <Route path='/read' element={<Read bookCollection={bookCollection}/>}></Route>
+        <Route path="/currentlyreading" element={<CurrentlyReading currentlyReading={currentlyReading}/>}></Route>
         <Route path="/wanttoread" element={<WantToRead />}></Route>
         <Route path='/search' element={<Search />}></Route>
-        <Route path="/displayTest/:symbol" element={<DisplayTest addBookFunction = {addBookFunction}/>}></Route>
+        <Route path="/displayTest/:symbol" element={<DisplayTest currentlyReading={currentlyReading} setCurrentlyReading={setCurrentlyReading} addBookFunction = {addBookFunction}/>}></Route>
         <Route path='*' element={<ErrorPage />}></Route>
       </Routes>
 

@@ -6,15 +6,15 @@ import { Link } from "react-router-dom";
 export default function MyLibrary({bookCollection})
 {
 
-    // console.log("in my library")
+    // console.log("in my library");
     // console.log(bookCollection[0]);
 
     return (
         <div>
             <h1>My library</h1>
             <nav>
-                <Link to="/read" state={bookCollection}>Read</Link>
-                <Link to="/currentlyreading" state={bookCollection}>Currently reading</Link>
+                <Link to="/read">Read</Link>
+                <Link to="/currentlyreading">Currently reading</Link>
                 <Link to="/wanttoread">Want to read</Link>
             </nav>
 
