@@ -6,17 +6,27 @@ import { Link } from "react-router-dom";
 export default function MyLibrary({bookCollection})
 {
 
-    console.log(bookCollection);
+    console.log("in my library")
+    console.log(bookCollection[0]);
+
+    // const [currentlyreading, setCurrentlyReading] = useState([]);
+    // const [wantToRead, setWantToRead] = useState([]);
 
     return (
         <div>
             <h1>My library</h1>
             <nav>
                 <Link to="/read" state={bookCollection}>Read</Link>
-                <Link to="/currentlyreading">Currently reading</Link>
+                <Link to="/currentlyreading" state={bookCollection}>Currently reading</Link>
                 <Link to="/wanttoread">Want to read</Link>
             </nav>
-            <div>
+
+        </div>
+    )
+}
+
+
+{/* <div>
                 {bookCollection ? bookCollection.map((item,index) => {
                         return (
                             <div>
@@ -32,12 +42,4 @@ export default function MyLibrary({bookCollection})
                             </div>
                         )
                     }) : <div>No information found</div>}
-            </div>
-        </div>
-    )
-}
-
-
-                    // bookCollection.map((item,index) => {
-                    //     return console.log("Title:" + item[index].title)
-                    // })
+            </div> */}

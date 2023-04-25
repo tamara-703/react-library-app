@@ -6,12 +6,12 @@ import { useEffect, useState } from "react";
 
 export default function DisplayTest(props) {
 
-    console.log("In display test");
+    // console.log("In display test");
 
     const params = useParams();
     const location = useLocation();
 
-    console.log(location);
+    //console.log(location);
 
     const bookData = [{
       title: location.state.volumeInfo.title,
@@ -28,7 +28,6 @@ export default function DisplayTest(props) {
     useEffect(() => {
       if(book.length > 0) {
         props.addBookFunction(book);
-        console.log(book);
       }
     }, [book])
 
@@ -40,6 +39,7 @@ export default function DisplayTest(props) {
       setBook(bookData);
 
     }
+
 
     //rate
 
@@ -56,8 +56,8 @@ export default function DisplayTest(props) {
                 <img src= {location.state.volumeInfo.imageLinks.thumbnail} alt={location.state.title}></img>
             </aside>
             <button onClick={handleAdd}>Add to read</button>
-            <button onClick={handleAdd}>Add to want to read</button>
             <button onClick={handleAdd}>Add to currently reading</button>
+            <button onClick={handleAdd}>Add to want to read</button>
         </div> : <div>No information found</div>}
 
 

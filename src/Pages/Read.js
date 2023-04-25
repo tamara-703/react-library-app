@@ -1,14 +1,42 @@
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 export default function Read() {
+
+  const [read, setRead] = useState([]);
   const location = useLocation();
 
-  console.log("showing location state");
-  console.log(location.state);
+  let state = location.state;
+
+  console.log("in read")
+  console.log(state[0])
+
+
+//   function addBookFunction(newBook)
+//   {
+//     //console.log(newBook);
+//       let oldBookCollection = bookCollection;
+
+//       oldBookCollection = [...bookCollection, newBook];
+
+//       setBookCollection(oldBookCollection);
+//   }
+
+
+
+//   useEffect(() => {
+//         // let oldRead = read;
+
+//         // oldRead = [...read, state[0]];
+//         // setRead(oldRead)
+
+//   }, [read])
+
 
   return (
     <div>
-      {location.state ? (
+
+      {/* {location.state ? (
         location.state.map((item, index) => {
           return (
             <div>
@@ -33,7 +61,7 @@ export default function Read() {
         })
       ) : (
         <div>No information found</div>
-      )}
+      )} */}
     </div>
   );
 }
