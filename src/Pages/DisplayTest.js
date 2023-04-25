@@ -1,14 +1,49 @@
 import { useLocation, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import MyLibrary from "./MyLibrary";
+import { useEffect, useState } from "react";
 
 
 export default function DisplayTest(props) {
 
-    console.log("in display test");
+    console.log("In display test");
 
     const params = useParams();
     const location = useLocation();
-    console.log(location)
-    console.log(params)
+
+    console.log(location);
+
+    const bookData = [{
+      title: location.state.volumeInfo.title,
+      subTitle: location.state.volumeInfo.subtitle,
+      authors: location.state.volumeInfo.authors,
+      averageRating: location.state.volumeInfo.averageRating,
+      publisher: location.state.volumeInfo.publisher,
+      publishedDate: location.state.volumeInfo.publishedDate,
+      thumbnail: location.state.volumeInfo.thumbnail,
+    }]
+
+    const [book, setBook] = useState([]);
+
+    useEffect(() => {
+      if(book.length > 0) {
+        props.addBookFunction(book);
+        console.log(book);
+      }
+    }, [book])
+
+
+    //add to my library
+    function handleAdd()
+    {
+
+      setBook(bookData);
+
+    }
+
+    //rate
+
+    //add a review
 
   return (
     <div>
@@ -20,26 +55,10 @@ export default function DisplayTest(props) {
             <aside>
                 <img src= {location.state.volumeInfo.imageLinks.thumbnail} alt={location.state.title}></img>
             </aside>
+            <button onClick={handleAdd}>Add to my library</button>
         </div> : <div>No information found</div>}
+
 
     </div>
   );
 }
-
-
-
-// {location.state ? (
-//     location.state.map((data, index) => {
-//       return (
-//         <div>
-//           <h1>Title: {location.state.volumeInfo.title}</h1>
-//           <h3>Subtitle: {location.state.volumeInfo.subtitle}</h3>
-//           <h5>Authors: {location.state.volumeInfo.authors}</h5>
-//           <h6>Categories: {location.state.volumeInfo.categories}</h6>
-//           <p>Description: {location.state.volumeInfo.description}</p>
-//         </div>
-//       );
-//     })
-//   ) : (
-//     <div>No information found</div>
-//   )}

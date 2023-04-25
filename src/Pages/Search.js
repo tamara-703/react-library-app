@@ -29,8 +29,8 @@ export default function Search()
     }
 
     const handleChange = (event) => {
-        console.log(event.target.value)
-        setFormData(event.target.value)
+        console.log(event.target.value);
+        setFormData(event.target.value);
     }
 
     return (
