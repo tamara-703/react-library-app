@@ -2,9 +2,10 @@
 
 import { useState } from "react"
 
-export default function MyLibrary(props)
+export default function MyLibrary({bookCollection})
 {
 
+    console.log(bookCollection)
 
     // title,
     //   subTitle: location.state.volumeInfo.subtitle,
@@ -19,32 +20,31 @@ export default function MyLibrary(props)
         <div>
             <h1>My library</h1>
             <div>
-                {props.bookCollection ? props.bookCollection.map((item,index) => {
-                    return console.log("Title:" + item.title)
-                }): <div>No information found</div>}
+                {bookCollection ? bookCollection.map((item,index) => {
+                        return (
+                            <div>
+                                <ul>
+                                    <li><img src={item[index].thumbnail} alt={item[index].title}></img></li>
+                                    <li>Title: {item[index].title}</li>
+                                    <li><i>{item[index].subtitle}</i></li>
+                                    <li>Authors: {item[index].authors}</li>
+                                    <li>Average rating: {item[index].averageRating}</li>
+                                    <li>Publisher: {item[index].publisher}</li>
+                                    <li>Published Date: {item[index].publishedDate}</li>
+                                </ul>
+                            </div>
+                        )
+                    }) : <div>No information found</div>}
             </div>
         </div>
     )
 }
 
 
-{/* <div>{
-                    props.bookCollection.map((item,index) => {
-                        return (
-                            <div>
-                                <ul>
-                                    <li><img src={item.thumbnail} alt={item.title}></img></li>
-                                    <li>Title: {item.title}</li>
-                                    <li><i>{item.subtitle}</i></li>
-                                    <li>Authors: {item.authors}</li>
-                                    <li>Average rating: {item.averageRating}</li>
-                                    <li>Publisher: {item.publisher}</li>
-                                    <li>Published Date: {item.publishedDate}</li>
-                                </ul>
+{/* */}
 
 
 
-
-                            </div>
-                        )
-                    })}</div>  */}
+                    // bookCollection.map((item,index) => {
+                    //     return console.log("Title:" + item[index].title)
+                    // })

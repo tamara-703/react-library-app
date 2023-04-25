@@ -20,7 +20,7 @@ export default function DisplayTest(props) {
       averageRating: location.state.volumeInfo.averageRating,
       publisher: location.state.volumeInfo.publisher,
       publishedDate: location.state.volumeInfo.publishedDate,
-      thumbnail: location.state.volumeInfo.thumbnail,
+      thumbnail: location.state.volumeInfo.imageLinks.thumbnail,
     }]
 
     const [book, setBook] = useState([]);

@@ -14,7 +14,7 @@ function App() {
 
   function addBookFunction(newBook)
   {
-    console.log(newBook);
+    //console.log(newBook);
       let oldBookCollection = bookCollection;
 
       oldBookCollection = [...bookCollection, newBook];
