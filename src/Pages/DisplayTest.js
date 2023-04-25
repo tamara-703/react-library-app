@@ -32,13 +32,14 @@ export default function DisplayTest(props) {
     }
   }, [book]);
 
-  //add to my library
+  //add to my read list
   function handleAdd() {
     console.log("getting read")
     // console.log(book)
     setBook(bookData);
   }
 
+  //add to my currently reading list
   function handleCurrentlyReading()
   {
 
@@ -49,6 +50,19 @@ export default function DisplayTest(props) {
     props.setCurrentlyReading(oldCurrentlyReading)
 
     console.log("getting currently reading");
+    console.log(bookData);
+  }
+
+  //add to my want to read list
+  function handleWantToRead()
+  {
+    let oldWantToRead = props.wantToRead;
+
+    oldWantToRead = [...props.wantToRead, bookData[0]];
+
+    props.setWantToRead(oldWantToRead);
+
+    console.log("getting want to read");
     console.log(bookData);
   }
 
@@ -76,7 +90,7 @@ export default function DisplayTest(props) {
           </aside>
           <button onClick={handleAdd}>Add to read</button>
           <button onClick={handleCurrentlyReading}>Add to currently reading</button>
-          <button onClick={handleAdd}>Add to want to read</button>
+          <button onClick={handleWantToRead}>Add to want to read</button>
         </div>
       ) : (
         <div>No information found</div>

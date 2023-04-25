@@ -1,19 +1,12 @@
 import { useLocation } from "react-router-dom";
 import { useState } from "react"
 
-export default function WantToRead()
+export default function WantToRead({wantToRead})
 {
-
-    const location = useLocation();
-
-  let state = location.state;
-
-  const [wantToRead, setWantToRead] = useState([]);
-
 
     return (
         <div>
-            {state ? state[0].map((item, index) => {
+            {wantToRead ? wantToRead.map((item, index) => {
         console.log("In want to read state map " + item.title)
         return (
             <div>
