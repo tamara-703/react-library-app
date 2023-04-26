@@ -1,11 +1,30 @@
-.fiction-container {
-    display: inline-flex;
-    justify-content: space-between;
+/* HOME PAGE CSS*/
+.home-page {
+    background-color: beige;
+}
+
+
+.book-container {
+    display: flex;
+    width: 100vw;
     border: solid 1px black;
-    margin-left: 200px;
     gap: 10px;
+    background-color: grey;
+}
+
+.book {
+    width: 200px;
+}
+
+.checkbox-container {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
 }
 
 .new-releases {
-    color: red;
+    margin-right: 85%;
+    border-bottom: solid 1px black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
+

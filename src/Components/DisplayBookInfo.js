@@ -37,7 +37,7 @@ export default function DisplayBookInfo({formData})
     return (
         <div>
             {formData ? printTitle() : <div>no information found</div>}
-            
+
         </div>
         // <div>
         //     {formData ? console.log(formData[0].volumeInfo): <div>no information to display</div>}

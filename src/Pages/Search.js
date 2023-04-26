@@ -10,6 +10,7 @@ import DisplayBookInfo from "../Components/DisplayBookInfo";
 export default function Search()
 {
     const [formData, setFormData] = useState([]);
+    const [allChecked, setAllChecked] = useState(false);
     const [FreeChecked, setFreeChecked] = useState(false);
     const [PaidChecked, setPaidChecked] = useState(false)
     const input = useRef();
@@ -76,9 +77,11 @@ export default function Search()
                         placeholder="enter book name"
                         ref={input}/>
                 <input type="submit" value="search"/>
+                <div className="checkbox-container">
                 <div>All</div><input type="checkbox" value="free" onClick={handleSubmit}></input>
                 <div>Free</div><input type="checkbox" value="free" onClick={handleFree} checked={FreeChecked}></input>
                 <div>Paid</div><input type="checkbox" value="paid" onClick={handlePaid} checked={PaidChecked}></input>
+                </div>
             </form>
             {formData ? <DisplayBookInfo formData = {formData} /> : <div></div>}
         </div>
