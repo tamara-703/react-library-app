@@ -1,7 +1,7 @@
 import { useLocation, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import MyLibrary from "./MyLibrary";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CurrentlyReading from "./CurrentlyReading";
 
 export default function DisplayTest(props) {
@@ -9,6 +9,7 @@ export default function DisplayTest(props) {
 
   const params = useParams();
   const location = useLocation();
+  const input = useRef();
 
   //console.log(location);
 
@@ -25,6 +26,7 @@ export default function DisplayTest(props) {
   ];
 
   const [book, setBook] = useState([]);
+  const [review, setReview] = useState("")
 
   useEffect(() => {
     if (book.length > 0) {
@@ -33,7 +35,7 @@ export default function DisplayTest(props) {
   }, [book]);
 
   //add to my read list
-  function handleAdd() {
+  function handleRead() {
     console.log("getting read")
     // console.log(book)
     setBook(bookData);
@@ -66,9 +68,13 @@ export default function DisplayTest(props) {
     console.log(bookData);
   }
 
-  //rate
-
   //add a review
+  function handleReview(event)
+  {
+
+    event.preventDefault();
+      setReview()
+  }
 
   return (
     <div>
@@ -88,10 +94,21 @@ export default function DisplayTest(props) {
               alt={location.state.title}
             ></img>
           </aside>
-          <button onClick={handleAdd}>Add to read</button>
+          <button onClick={handleRead}>Add to read</button>
           <button onClick={handleCurrentlyReading}>Add to currently reading</button>
           <button onClick={handleWantToRead}>Add to want to read</button>
+
+
+          <form onSubmit={handleReview}>
+          <h5>Write a review</h5>
+          <textarea ref={input} maxLength="150"></textarea>
+          <input type="submit" value="submit"></input>
+
+
+          </form>
         </div>
+
+
       ) : (
         <div>No information found</div>
       )}

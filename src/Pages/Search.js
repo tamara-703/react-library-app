@@ -39,9 +39,14 @@ export default function Search()
             <form onSubmit={handleSubmit}>
                 <input type="text"
                         name="search"
-                        placeholder="enter the name of the book here"
+                        placeholder="enter book name"
                         ref={input}/>
                 <input type="submit" value="search"/>
+                <div>Filter by</div><select>
+                    <option>Free e-books</option>
+                    <option>Paid e-books</option>
+                    <option>all</option>
+                </select>
             </form>
             {formData ? <DisplayBookInfo formData = {formData} /> : <div></div>}
         </div>
