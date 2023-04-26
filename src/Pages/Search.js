@@ -2,6 +2,8 @@
 
 import { useRef, useState } from "react"
 import GetAPI from '../Components/GetAPI'
+import GetAPIFree from '../Components/GetAPIFree'
+import GetAPIPaid from '../Components/GetAPIPaid'
 import Test from "../Components/Test";
 import DisplayBookInfo from "../Components/DisplayBookInfo";
 
@@ -15,9 +17,8 @@ export default function Search()
         //fetch api on submit
         event.preventDefault();
         console.log("in handlesubmit")
-        const data = input.current.value;
+        const data = input.current.value; //search term
 
-        //const bookData = "";
         const info = GetAPI(data);
 
         console.log("back to search")
@@ -28,9 +29,38 @@ export default function Search()
 
     }
 
-    const handleChange = (event) => {
-        console.log(event.target.value);
-        setFormData(event.target.value);
+    const handleFree = (event) => {
+        event.preventDefault();
+
+        console.log("in handle free")
+
+        const data = input.current.value; //search term
+
+        const info = GetAPIFree(data);
+
+        console.log("back to search")
+
+        info.then((i) => {
+            i ? setFormData(i.items) : console.log("not found");
+        })
+
+    }
+
+    const handlePaid = (event) => {
+        event.preventDefault();
+
+        console.log("in handle free")
+
+        const data = input.current.value; //search term
+
+        const info = GetAPIPaid(data);
+
+        console.log("back to search")
+
+        info.then((i) => {
+            i ? setFormData(i.items) : console.log("not found");
+        })
+
     }
 
     return (
@@ -42,11 +72,9 @@ export default function Search()
                         placeholder="enter book name"
                         ref={input}/>
                 <input type="submit" value="search"/>
-                <div>Filter by</div><select>
-                    <option>Free e-books</option>
-                    <option>Paid e-books</option>
-                    <option>all</option>
-                </select>
+                <div>All</div><input type="checkbox" value="free" onClick={handleSubmit}></input>
+                <div>Free</div><input type="checkbox" value="free" onClick={handleFree}></input>
+                <div>Paid</div><input type="checkbox" value="paid" onClick={handlePaid}></input>
             </form>
             {formData ? <DisplayBookInfo formData = {formData} /> : <div></div>}
         </div>

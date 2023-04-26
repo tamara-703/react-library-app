@@ -3,6 +3,7 @@ import {Route, Routes, Router} from 'react-router-dom';
 import Home from './Pages/Home';
 import MyLibrary from './Pages/MyLibrary';
 import Search from './Pages/Search';
+import SearchByCategory from './Pages/SearchByCategory'
 import ErrorPage from './Pages/ErrorPage';
 import DisplayTest from './Pages/DisplayTest'
 import Nav from './Components/Nav';
@@ -41,6 +42,7 @@ function App() {
         <Route path="/currentlyreading" element={<CurrentlyReading currentlyReading={currentlyReading}/>}></Route>
         <Route path="/wanttoread" element={<WantToRead wantToRead={wantToRead}/>}></Route>
         <Route path='/search' element={<Search />}></Route>
+        <Route path="/searchbycategory" element={<SearchByCategory />}></Route>
         <Route path="/displayTest/:symbol" element={<DisplayTest currentlyReading={currentlyReading} setCurrentlyReading={setCurrentlyReading} wantToRead={wantToRead}
         setWantToRead={setWantToRead} addBookFunction = {addBookFunction}/>}></Route>
         <Route path='*' element={<ErrorPage />}></Route>

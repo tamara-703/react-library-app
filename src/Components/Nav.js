@@ -9,6 +9,7 @@ export default function Nav()
             <Link to='/'>Home</Link>
             <Link to='/mylibrary'>My library</Link>
             <Link to='/search'>Search</Link>
+            <Link to="/searchbycategory">Search by category</Link>
         </div>
     )
 }
