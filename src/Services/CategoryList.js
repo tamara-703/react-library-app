@@ -16,8 +16,8 @@ const categories = [
                     thumbnail: "http://books.google.com/books/content?id=DKreoAEACAAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE72QYjGgGflsq3Fp2mxFiuLmQfrEVczZDDbguZ93MwZZRSJlcKRV8IvhDNJ1kwJAWLbEoriE1ZKV3mcI6avwSC2Ou7z20w5biz4sLSPK4AkJmfOjGSNKSlYRp9XN3zcZIB-G0zp5&source=gbs_api",
                 },
                 {
-                    book: "Small mercies",
-                    thmubnail: "http://books.google.com/books/publisher/content?id=DsbhCwAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE71WFroQuu-cW1OTtkwjHtdOvPN0oHKPAqtnzhyHr5n4bVgW_P6z1Gt3jykCJDEUTt7m42sr2hInBxZ28504n6Z-eYn29kyh4A1hkJQaUYhY4dw0WJi_jlG07Hib1WeJaoCU5UxP&source=gbs_api",
+                    book: "In the lives of puppets",
+                    thmubnail: "http://books.google.com/books/content?id=FIVrEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
                 }
             ]
     },

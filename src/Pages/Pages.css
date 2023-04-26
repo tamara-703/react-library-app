@@ -1,4 +1,11 @@
 .fiction-container {
-    display: flex;
-    justify-content: center;
+    display: inline-flex;
+    justify-content: space-between;
+    border: solid 1px black;
+    margin-left: 200px;
+    gap: 10px;
+}
+
+.new-releases {
+    color: red;
 }

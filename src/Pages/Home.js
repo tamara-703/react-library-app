@@ -49,7 +49,7 @@ export default function Home()
     return (
         <div className="home-page">
             <h1>Home page</h1>
-            <h3>Newly released</h3>
+            <h3 className='new-releases'>Newly released</h3>
             <br></br>
             <h6>Fiction</h6>
             {Categories.map((item, index) => {
@@ -58,10 +58,11 @@ export default function Home()
                     {item.Fiction.map((fiction, idx) => {
                         return (
                             <div className='fiction-container'>
-                                <span><img src={fiction.thumbnail} alt={fiction.book}></img>
-                                <div>{fiction.book}</div></span>
+                                <span>
+                                    <img src={fiction.thumbnail} alt={fiction.book}></img>
+                                    <p>{fiction.book}</p>
+                                </span>
                                 </div>
-
                         )
                     })}
                 </div>

@@ -10,6 +10,8 @@ import DisplayBookInfo from "../Components/DisplayBookInfo";
 export default function Search()
 {
     const [formData, setFormData] = useState([]);
+    const [FreeChecked, setFreeChecked] = useState(false);
+    const [PaidChecked, setPaidChecked] = useState(false)
     const input = useRef();
 
 
@@ -31,6 +33,7 @@ export default function Search()
 
     const handleFree = (event) => {
         event.preventDefault();
+        setFreeChecked(true)
 
         console.log("in handle free")
 
@@ -48,6 +51,7 @@ export default function Search()
 
     const handlePaid = (event) => {
         event.preventDefault();
+        setPaidChecked(true)
 
         console.log("in handle free")
 
@@ -73,8 +77,8 @@ export default function Search()
                         ref={input}/>
                 <input type="submit" value="search"/>
                 <div>All</div><input type="checkbox" value="free" onClick={handleSubmit}></input>
-                <div>Free</div><input type="checkbox" value="free" onClick={handleFree}></input>
-                <div>Paid</div><input type="checkbox" value="paid" onClick={handlePaid}></input>
+                <div>Free</div><input type="checkbox" value="free" onClick={handleFree} checked={FreeChecked}></input>
+                <div>Paid</div><input type="checkbox" value="paid" onClick={handlePaid} checked={PaidChecked}></input>
             </form>
             {formData ? <DisplayBookInfo formData = {formData} /> : <div></div>}
         </div>
