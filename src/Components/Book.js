@@ -1,6 +1,7 @@
 
 import {Link, useNavigate} from 'react-router-dom';
 import Read from '../Pages/Read';
+import DisplayHomeBook from '../Pages/DisplayHomeBook';
 
 export default function Book(props) {
 
@@ -10,8 +11,7 @@ export default function Book(props) {
   {
 
     props.setHomeBook(props.fiction.book);
-    nav(`/displaytest/${props.fiction.book}`)
-
+    nav(`/displayhomebook/${props.fiction.book}`)
   }
 
   return (

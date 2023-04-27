@@ -11,6 +11,7 @@ import { useState } from 'react';
 import Read from './Pages/Read';
 import CurrentlyReading from './Pages/CurrentlyReading';
 import WantToRead from './Pages/WantToRead';
+import DisplayHomeBook from './Pages/DisplayHomeBook';
 
 function App() {
 
@@ -37,16 +38,17 @@ function App() {
       <Nav />
 
       <Routes>
-        
+
         <Route path='/' element={<Home setHomeBook={setHomeBook}/>}></Route>
         <Route path='/mylibrary' element={<MyLibrary bookCollection={bookCollection}/>}></Route>
-        <Route path='/read' element={<Read />}></Route>
+        <Route path='/read' element={<Read bookCollection={bookCollection}/>}></Route>
         <Route path="/currentlyreading" element={<CurrentlyReading currentlyReading={currentlyReading}/>}></Route>
         <Route path="/wanttoread" element={<WantToRead wantToRead={wantToRead}/>}></Route>
         <Route path='/search' element={<Search />}></Route>
         <Route path="/searchbycategory" element={<SearchByCategory />}></Route>
         <Route path="/displayTest/:symbol" element={<DisplayTest currentlyReading={currentlyReading} setCurrentlyReading={setCurrentlyReading} wantToRead={wantToRead}
         setWantToRead={setWantToRead} addBookFunction = {addBookFunction} homeBook={homeBook}/> }></Route>
+        <Route path="/displayhomebook/:symbol" element={<DisplayHomeBook homeBook={homeBook}/>}></Route>
         <Route path='*' element={<ErrorPage />}></Route>
 
       </Routes>

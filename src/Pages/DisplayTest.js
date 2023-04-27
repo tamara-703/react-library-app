@@ -14,9 +14,6 @@ export default function DisplayTest(props) {
   const location = useLocation();
   const input = useRef();
 
-
-
-
   const bookData = [
     {
       title: location.state.volumeInfo.title,
@@ -39,9 +36,6 @@ export default function DisplayTest(props) {
     }
   }, [book]);
 
-  useEffect(() => {
-    props.homeBook ? GetAPI(props.homeBook) : 
-  }, [])
 
   //add to my read list
   function handleRead() {
