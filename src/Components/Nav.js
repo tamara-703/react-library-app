@@ -1,5 +1,5 @@
 //Navigation component that acts as a dashboard for all main links
-
+import './Components.css'
 import { Link } from "react-router-dom";
 
 export default function Nav()

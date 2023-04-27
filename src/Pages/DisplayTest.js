@@ -3,15 +3,19 @@ import { Link } from "react-router-dom";
 import MyLibrary from "./MyLibrary";
 import { useEffect, useRef, useState } from "react";
 import CurrentlyReading from "./CurrentlyReading";
+import GetAPI from "../Components/GetAPI";
 
 export default function DisplayTest(props) {
+
   // console.log("In display test");
+
 
   const params = useParams();
   const location = useLocation();
   const input = useRef();
 
-  //console.log(location);
+
+
 
   const bookData = [
     {
@@ -26,7 +30,8 @@ export default function DisplayTest(props) {
   ];
 
   const [book, setBook] = useState([]);
-  const [review, setReview] = useState("")
+  const [review, setReview] = useState("");
+  const [bookLocation, setBookLocation] = useState(null);
 
   useEffect(() => {
     if (book.length > 0) {
@@ -34,9 +39,13 @@ export default function DisplayTest(props) {
     }
   }, [book]);
 
+  useEffect(() => {
+    props.homeBook ? GetAPI(props.homeBook) : 
+  }, [])
+
   //add to my read list
   function handleRead() {
-    console.log("getting read")
+    console.log("getting read");
     // console.log(book)
     setBook(bookData);
   }
@@ -51,8 +60,6 @@ export default function DisplayTest(props) {
 
     props.setCurrentlyReading(oldCurrentlyReading)
 
-    console.log("getting currently reading");
-    console.log(bookData);
   }
 
   //add to my want to read list
@@ -63,9 +70,6 @@ export default function DisplayTest(props) {
     oldWantToRead = [...props.wantToRead, bookData[0]];
 
     props.setWantToRead(oldWantToRead);
-
-    console.log("getting want to read");
-    console.log(bookData);
   }
 
   //add a review
@@ -73,7 +77,7 @@ export default function DisplayTest(props) {
   {
 
     event.preventDefault();
-      setReview()
+      setReview();
   }
 
   return (
@@ -103,7 +107,6 @@ export default function DisplayTest(props) {
           <h5>Write a review</h5>
           <textarea ref={input} maxLength="150"></textarea>
           <input type="submit" value="submit"></input>
-
 
           </form>
         </div>

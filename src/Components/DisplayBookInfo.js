@@ -17,22 +17,12 @@ export default function DisplayBookInfo({formData})
                             <Link to={`/displayTest/${item.volumeInfo.title}`} state={item}>
                                 <h1 key={index}>Title: {item.volumeInfo.title}</h1>
                                 </Link>
-
-                            {/* <h1 key={index} onClick={passToDiplayInfo(item)}>Title: {item.volumeInfo.title}</h1> */}
                             </div>
                     )
                 })}
             </div>
         )
     }
-
-    // const passToDiplayInfo = (data) => {
-    //     return (
-    //         <div>
-    //             <DisplayTest data={data} />
-    //         </div>
-    //     )
-    // }
 
     return (
         <div>

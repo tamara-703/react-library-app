@@ -1,5 +1,21 @@
 /* NAV CSS*/
 
+.nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: purple;
+    gap: 5px;
+    color: white;
+    padding: 15px;
+    font-size: 2em;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 200px;
+  }
+
 
 
 

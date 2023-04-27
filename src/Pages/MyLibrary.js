@@ -2,22 +2,25 @@
 
 import { useState } from "react"
 import { Link } from "react-router-dom";
+import Read from "./Read";
 
 export default function MyLibrary({bookCollection})
 {
 
     // console.log("in my library");
-    // console.log(bookCollection[0]);
+    // console.log(bookCollection);
+
 
     return (
         <div>
-            <h1>My library</h1>
-            <nav>
-                <Link to="/read">Read</Link>
-                <Link to="/currentlyreading">Currently reading</Link>
-                <Link to="/wanttoread">Want to read</Link>
-            </nav>
+            <h1 className="mylibrary-header">My Books</h1>
+                <ul className="mylibrary-list mylibrary-nav">
+                    <li><Link to="/read">Read</Link></li>
+                    <li><Link to="/currentlyreading">Currently reading</Link></li>
+                    <li><Link to="/wanttoread">Want to read</Link></li>
+                </ul>
 
+    <Read bookCollection={bookCollection}/>
         </div>
     )
 }

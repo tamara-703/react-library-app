@@ -15,8 +15,9 @@ import WantToRead from './Pages/WantToRead';
 function App() {
 
   const [currentlyReading, setCurrentlyReading] = useState([]);
-  const [wantToRead, setWantToRead] = useState([])
+  const [wantToRead, setWantToRead] = useState([]);
   const [bookCollection, setBookCollection] = useState([]);
+  const [homeBook, setHomeBook] = useState(null);
 
   function addBookFunction(newBook)
   {
@@ -36,16 +37,18 @@ function App() {
       <Nav />
 
       <Routes>
-        <Route path='/' element={<Home />}></Route>
-        <Route path='/mylibrary' element={<MyLibrary />}></Route>
-        <Route path='/read' element={<Read bookCollection={bookCollection}/>}></Route>
+        
+        <Route path='/' element={<Home setHomeBook={setHomeBook}/>}></Route>
+        <Route path='/mylibrary' element={<MyLibrary bookCollection={bookCollection}/>}></Route>
+        <Route path='/read' element={<Read />}></Route>
         <Route path="/currentlyreading" element={<CurrentlyReading currentlyReading={currentlyReading}/>}></Route>
         <Route path="/wanttoread" element={<WantToRead wantToRead={wantToRead}/>}></Route>
         <Route path='/search' element={<Search />}></Route>
         <Route path="/searchbycategory" element={<SearchByCategory />}></Route>
         <Route path="/displayTest/:symbol" element={<DisplayTest currentlyReading={currentlyReading} setCurrentlyReading={setCurrentlyReading} wantToRead={wantToRead}
-        setWantToRead={setWantToRead} addBookFunction = {addBookFunction}/>}></Route>
+        setWantToRead={setWantToRead} addBookFunction = {addBookFunction} homeBook={homeBook}/> }></Route>
         <Route path='*' element={<ErrorPage />}></Route>
+
       </Routes>
 
     </div>

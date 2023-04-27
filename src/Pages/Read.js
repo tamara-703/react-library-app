@@ -1,37 +1,40 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import MyLibrary from "./MyLibrary";
 
-export default function Read({bookCollection}) {
+export default function Read({ bookCollection }) {
+  //state must be set to a useState and then the state of that useState should be displayed
+  console.log("in read");
+  console.log(bookCollection);
 
-    //state must be set to a useState and then the state of that useState should be displayed
-    console.log("in read")
-    console.log(bookCollection)
-
-return (
+  return (
     <div>
-                {bookCollection ? bookCollection.map((item,index) => {
-                        return (
-                            <div>
-                                <ul>
-                                    <li><img src={item.thumbnail} alt={item.title}></img></li>
-                                    <li>Title: {item.title}</li>
-                                    <li><i>{item.subtitle}</i></li>
-                                    <li>Authors: {item.authors}</li>
-                                    <li>Average rating: {item.averageRating}</li>
-                                    <li>Publisher: {item.publisher}</li>
-                                    <li>Published Date: {item.publishedDate}</li>
-                                </ul>
-                            </div>
-                        )
-                    }) : <div>No information found</div>}
+      {bookCollection ? (
+        bookCollection.map((item, index) => {
+          return (
+            <div>
+              <ul>
+                <li>
+                  <img src={item.thumbnail} alt={item.title}></img>
+                </li>
+                <li>Title: {item.title}</li>
+                <li>
+                  <i>{item.subtitle}</i>
+                </li>
+                <li>Authors: {item.authors}</li>
+                <li>Average rating: {item.averageRating}</li>
+                <li>Publisher: {item.publisher}</li>
+                <li>Published Date: {item.publishedDate}</li>
+              </ul>
             </div>
-)
-
-
+          );
+        })
+      ) : (
+        <div>No information found</div>
+      )}
+    </div>
+  );
 }
-
-
-
 
 // return (
 //     <div>

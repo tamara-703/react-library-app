@@ -1,19 +1,36 @@
-/* HOME PAGE CSS*/
-.home-page {
-    background-color: beige;
-}
+/*import font for homepage header*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@1,700&display=swap');
 
+/* HOME PAGE & BOOK PAGE CSS*/
+.home-page {
+    background-color: beige
+}
 
 .book-container {
     display: flex;
     width: 100vw;
-    border: solid 1px black;
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
     gap: 10px;
-    background-color: grey;
+    padding: 10px;
+    background-color: lightgrey;
 }
 
 .book {
     width: 200px;
+}
+
+.book img {
+    transition: transform .5s;
+}
+
+img:hover {
+    transform: scale(1.3);
+}
+
+.book-title {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
 }
 
 .checkbox-container {
@@ -23,8 +40,40 @@
 }
 
 .new-releases {
-    margin-right: 85%;
-    border-bottom: solid 1px black;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-right: center;
+    font-size: 65px;
+    font-family: 'Noto Serif', serif;
 }
 
+.genre {
+    display: flex;
+    flex-direction: flex-start;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+    color: black;
+}
+
+
+/*MY LIBRARY CSS*/
+
+.mylibrary-header {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-right: 80%;
+    border-bottom: solid 2px black;
+    font-size: 70px;
+}
+
+.mylibrary-nav {
+    display: inline-flex;
+    flex-direction: column;
+    margin-right: 80%;
+    height: 15vh;
+    padding: 10px;
+    gap: 20px;
+    border: groove 1px black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.mylibrary-list {
+    list-style: none;
+}
