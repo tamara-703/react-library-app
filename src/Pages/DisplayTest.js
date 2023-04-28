@@ -7,7 +7,7 @@ import GetAPI from "../Components/GetAPI";
 
 export default function DisplayTest(props) {
 
-  // console.log("In display test");
+  console.log("In display test");
 
 
   const params = useParams();
@@ -40,7 +40,7 @@ export default function DisplayTest(props) {
   //add to my read list
   function handleRead() {
     console.log("getting read");
-    // console.log(book)
+    console.log(bookData)
     setBook(bookData);
   }
 
@@ -48,11 +48,14 @@ export default function DisplayTest(props) {
   function handleCurrentlyReading()
   {
 
+    console.log("getting currently read")
+    console.log(props.currentlyReading)
+
     let oldCurrentlyReading = props.currentlyReading;
 
     oldCurrentlyReading = [...props.currentlyReading, bookData[0]];
 
-    props.setCurrentlyReading(oldCurrentlyReading)
+    props.setCurrentlyReading(oldCurrentlyReading);
 
   }
 

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import MyLibrary from "./MyLibrary";
+import GetRating from "../Services/GetRating";
 
 export default function Read({ bookCollection }) {
   //state must be set to a useState and then the state of that useState should be displayed
@@ -11,21 +12,27 @@ export default function Read({ bookCollection }) {
     <div>
       {bookCollection ? (
         bookCollection.map((item, index) => {
+          console.log(item)
           return (
             <div>
-              <ul>
-                <li>
-                  <img src={item.thumbnail} alt={item.title}></img>
-                </li>
-                <li>Title: {item.title}</li>
-                <li>
-                  <i>{item.subtitle}</i>
-                </li>
-                <li>Authors: {item.authors}</li>
-                <li>Average rating: {item.averageRating}</li>
-                <li>Publisher: {item.publisher}</li>
-                <li>Published Date: {item.publishedDate}</li>
-              </ul>
+              <h1 className="status-header">Reading</h1>
+              <div className="header-container">
+              <p>Cover</p><p>Title</p><p>Author</p><p>Average Rating</p>
+                </div>
+
+            <div className="read-list">
+                <div>
+                  <img src={item.thumbnail} alt={item.title} width="200px" height="300px"></img>
+                </div>
+                <div className="title-list">
+                <p className="title" >{item.title}</p>
+                  <li>
+                    {item.subtitle}
+                  </li>
+                </div>
+                <div className="author">{item.authors}</div>
+                <div className="avg-rating"><GetRating rating={item.averageRating}/></div>
+            </div>
             </div>
           );
         })
@@ -35,6 +42,26 @@ export default function Read({ bookCollection }) {
     </div>
   );
 }
+
+
+
+
+// <div className="read-list">
+// <div>
+//   <img src={item.thumbnail} alt={item.title} width="200px" height="300px"></img>
+// </div>
+// <div className="title-list">
+// <p className="title">
+//   {item.title}
+//   </p>
+//   <p className="subtitle">{item.subtitle}</p>
+//   <div className="author">{item.authors}</div>
+//   <div className="avg-rating">Average rating: {item.averageRating}</div>
+// </div>
+
+//   <div>Publisher: {item.publisher}</div>
+//   <div>Published Date: {item.publishedDate}</div>
+// </div>
 
 // return (
 //     <div>

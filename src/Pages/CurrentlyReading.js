@@ -1,5 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useState } from "react"
+import GetRating from "../Services/GetRating";
+import './Pages.css'
 
 
 export default function CurrentlyReading({currentlyReading})
@@ -18,9 +20,43 @@ export default function CurrentlyReading({currentlyReading})
   return (
     <div>
         {currentlyReading ? currentlyReading.map((item,index) => {
-                    console.log(item.thumbnail)
+
                         return (
+                    <div>
+                        <h1 className="status-header">Currently reading</h1>
+                            <div className="header-container">
+                            <p>Cover</p><p>Title</p><p>Author</p><p>Average Rating</p>
+                            </div>
+
+                            <div className="read-list">
                             <div>
+                            <img src={item.thumbnail} alt={item.title} width="200px" height="300px"></img>
+                            </div>
+
+                            <div className="title-list">
+                            <p className="title">{item.title}</p>
+                            <li>
+                                {item.subtitle}
+                                </li>
+                            </div>
+                            <div className="author">{item.authors}</div>
+                            <div className="avg-rating"><GetRating rating={item.averageRating}/></div>
+                            </div>
+                    </div>
+          );
+        })
+       : (
+        <div>No information found</div>
+      )}
+    </div>
+
+
+                        )
+
+}
+
+
+{/* <div>
                                 <ul>
                                     <li><img src={item.thumbnail} alt={item.title}></img></li>
                                     <li>Title: {item.title}</li>
@@ -33,12 +69,35 @@ export default function CurrentlyReading({currentlyReading})
                             </div>
                         )
                     }) : <div>No information found</div>}
+            </div> */}
+
+
+
+{/* <div>
+              <div className="header-container">
+              <p>Cover</p><p>Title</p><p>Author</p><p>Average Rating</p>
+                </div>
+
+            <div className="read-list">
+                <div>
+                  <img src={item.thumbnail} alt={item.title} width="200px" height="300px"></img>
+                </div>
+                <div className="title-list">
+                <p className="title">{item.title}</p>
+                  <li>
+                    {item.subtitle}
+                  </li>
+                </div>
+                <div className="author">{item.authors}</div>
+                <div className="avg-rating"><GetRating rating={item.averageRating}/></div>
             </div>
-)
-
-
-
-}
+            </div>
+          );
+        })
+      ) : (
+        <div>No information found</div>
+      )}
+    </div> */}
 
 
  {/* {currentlyReading ? currentlyReading.map((item,index) => {

@@ -22,8 +22,8 @@ export default function DisplayHomeBook(props) {
     bookData = book;
   }
 
-  console.log("Showing book data")
-  console.log(bookData)
+  console.log("Showing book data");
+  console.log(bookData);
 
   return (
     <div>

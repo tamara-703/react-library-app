@@ -18,7 +18,7 @@ export default function Book(props) {
     <div className="book">
 
         <span>
-          <img src={props.fiction.thumbnail} alt={props.fiction.book} width= "150px" onClick={handlePrint}></img>
+          <img src={props.fiction.thumbnail} alt={props.fiction.book} width= "150px" onClick={handlePrint} className='pop-img'></img>
           <b><p className="book-title">{props.fiction.book}</p></b>
         </span>
     </div>

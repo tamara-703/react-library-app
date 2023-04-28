@@ -1,5 +1,9 @@
 /*import font for homepage header*/
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
+
 
 /* HOME PAGE & BOOK PAGE CSS*/
 .home-page {
@@ -20,7 +24,7 @@
     width: 200px;
 }
 
-.book img {
+.pop-img {
     transition: transform .5s;
 }
 
@@ -56,6 +60,10 @@ img:hover {
 
 /*MY LIBRARY CSS*/
 
+body {
+    background-color: white;
+}
+
 .mylibrary-header {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-right: 80%;
@@ -76,4 +84,66 @@ img:hover {
 
 .mylibrary-list {
     list-style: none;
+}
+
+
+
+
+/* READ PAGE*/
+
+.status-header {
+    font-family: 'Noto Serif', serif;
+    margin-right: 60%;
+    font-size: 80px;
+    border-bottom: groove 1px black;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'Lora', serif;
+    font-size: 30px;
+    font-family: 'Lora', serif;
+
+}
+
+.read-list {
+    display: flex;
+    flex-direction: row;
+    border: solid 1px black;
+}
+
+.title-list {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    list-style: none;
+    padding: 0 50px;
+
+}
+/* Styling description of book*/
+.title {
+    /* font-family: 'Merriweather', serif; */
+    font-family: 'Quicksand', sans-serif;
+    font-size: 40px;
+    margin-left: 50px;
+}
+
+p {
+    margin: 10px;
+}
+
+.author {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 30px;
+    margin-left: 180px;
+
+}
+
+.avg-rating {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    margin-left: 400px;
+    padding: 0 20px;
 }
