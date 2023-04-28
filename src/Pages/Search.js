@@ -72,11 +72,13 @@ export default function Search()
         <div>
             <h1>Search books</h1>
             <form onSubmit={handleSubmit}>
+                <div className="form-outline">
                 <input type="text"
                         name="search"
                         placeholder="enter book name"
                         ref={input}/>
-                <input type="submit" value="search"/>
+                <input type="submit" value="search" className="btn btn-primary"/>
+                </div>
                 <div className="checkbox-container">
                 <div>All</div><input type="checkbox" value="free" onClick={handleSubmit}></input>
                 <div>Free</div><input type="checkbox" value="free" onClick={handleFree} checked={FreeChecked}></input>

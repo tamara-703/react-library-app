@@ -87,13 +87,18 @@ export default function DisplayTest(props) {
           <div className="img-container">
             <img
               src={location.state.volumeInfo.imageLinks.thumbnail}
-              alt={location.state.title} width="300px"
-            ></img>
+              alt={location.state.title} width="300px">
+
+              </img>
 
             <div>
             <div className="displaytest-title">{location.state.volumeInfo.title}</div>
             <div className="displaytest-author">Author: {location.state.volumeInfo.authors}</div>
               </div>
+
+              <button onClick={handleRead} className="btn btn-secondary raise">Add to read</button>
+          <button onClick={handleCurrentlyReading} className="btn btn-secondary raise">Add to currently reading</button>
+          <button onClick={handleWantToRead} className="btn btn-secondary raise">Add to want to read</button>
             </div>
 
             <h1 className="displaytest-header">Description</h1>
@@ -119,18 +124,6 @@ export default function DisplayTest(props) {
           <h1>Published Date</h1>
           <div className="displaytest-text">{location.state.volumeInfo.publishedDate}</div>
           </div>
-
-
-
-          <br></br>
-          <br></br>
-          <br></br>
-
-
-          <button onClick={handleRead}>Add to read</button>
-          <button onClick={handleCurrentlyReading}>Add to currently reading</button>
-          <button onClick={handleWantToRead}>Add to want to read</button>
-
 
           {/* <form onSubmit={handleReview}>
           <h5>Write a review</h5>

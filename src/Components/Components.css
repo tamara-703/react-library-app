@@ -23,11 +23,30 @@
 
 
 
-
-
-
-
-
-
-
 /* BOOK CSS*/
+
+.pop-img {
+  transition: transform .5s;
+}
+
+.pop-img:hover {
+  transform: scale(1.3);
+}
+
+
+
+
+
+
+
+
+
+
+/* DISPLAY BOOK INFO PAGE*/
+
+.title-link {
+  display: flex;
+  justify-content: flex-start;
+  padding: 5px;
+  
+}

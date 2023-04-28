@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap');
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css');
 
 
 /* HOME PAGE & BOOK PAGE CSS*/
@@ -94,9 +95,9 @@ body {
 
 .status-header {
     font-family: 'Noto Serif', serif;
-    margin-right: 60%;
+    margin-right: 90%;
     font-size: 80px;
-    border-bottom: groove 1px black;
+
 }
 
 .header-container {
@@ -112,15 +113,16 @@ body {
 .read-list {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     border: solid 1px black;
 }
 
 .title-list {
     display: flex;
     flex-direction: column;
-    padding: 5px;
+    /* padding: 5px; */
     list-style: none;
-    padding: 0 50px;
+    padding: 0 130px;
 
 }
 /* Styling description of book*/
@@ -150,14 +152,25 @@ p {
 }
 
 
-
-
-
 /* DISPLAY TEST DESIGN*/
 
 .img-container {
     display: flex;
     padding: 30px;
+    gap: 20px;
+}
+
+.img-container button {
+    height: 30px;
+    margin-right: 100px;
+    padding: 0 20px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.raise:hover,
+.raise:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
 }
 
 .displaytest-title {
@@ -170,21 +183,21 @@ p {
     font-family: 'Quicksand', sans-serif;
     font-size: 30px;
     padding: 10px 10px;
-    margin-right: 350px;
+    /* margin-right: 350px; */
 
 }
 
 .container {
     font-family: 'Noto Serif', serif;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     gap: 20px;
 }
 
 .displaytest-pubdate {
     font-family: 'Noto Serif', serif;
-    margin-right: 86%;
+    /* margin-right: 86%; */
 }
 
 .displaytest-description {
@@ -201,3 +214,6 @@ p {
     font-family: 'Quicksand', sans-serif;
     font-size: 25px;
 }
+
+
+/* SEARCH PAGE*/

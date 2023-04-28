@@ -15,7 +15,7 @@ export default function DisplayBookInfo({formData})
                     return (
                         <div>
                             <Link to={`/displayTest/${item.volumeInfo.title}`} state={item}>
-                                <h1 key={index}>Title: {item.volumeInfo.title}</h1>
+                                <h1 key={index} className='title-link'>{index+1}. Title: {item.volumeInfo.title}</h1>
                                 </Link>
                             </div>
                     )
