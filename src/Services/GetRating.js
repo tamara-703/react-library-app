@@ -8,7 +8,7 @@ export default function GetRating({ rating }) {
           <img
             src="https://static.vecteezy.com/system/resources/previews/004/256/658/original/five-star-customer-product-ratings-review-flat-icons-for-apps-and-websites-illustration-of-five-golden-yellow-stars-in-a-row-isolated-in-a-white-background-concepts-for-ratings-customers-review-free-vector.jpg"
             alt="5 star" width="150px"
-          />
+          /> 
         ) : (
           <div></div>
         )}

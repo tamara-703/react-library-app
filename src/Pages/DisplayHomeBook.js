@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import GetAPI from "../Components/GetAPI";
+import GetRating from "../Services/GetRating";
 
 export default function DisplayHomeBook(props) {
   console.log("in display home book");
@@ -17,8 +18,7 @@ export default function DisplayHomeBook(props) {
 
   let bookData = null;
 
-  if(props.homeBook)
-  {
+  if (props.homeBook) {
     bookData = book;
   }
 
@@ -29,18 +29,42 @@ export default function DisplayHomeBook(props) {
     <div>
       {bookData ? (
         <div>
-          <div>Title: {bookData.title}</div>
-          <div>Authors: {bookData.authors}</div>
-          <div>Description: {bookData.description}</div>
-          <div>Average rating: {bookData.averageRating}</div>
-          <div>Publisher: {bookData.publisher}</div>
-          <div>Published date: {bookData.publishedDate}</div>
-          <aside>
+          <div className="img-container">
             <img
               src={bookData.imageLinks.thumbnail}
               alt={bookData.title}
+              width="300px"
             ></img>
-          </aside>
+
+            <div>
+              <div className="displaytest-title">{bookData.title}</div>
+              <div className="displaytest-author">
+                Author: {bookData.authors}
+              </div>
+            </div>
+          </div>
+
+          <h1 className="displaytest-header">Description</h1>
+          <article className="displaytest-description">
+            <p>{bookData.description}</p>
+          </article>
+
+          <div className="container">
+            <h1>Average Rating</h1>
+            <div>
+              <GetRating rating={bookData.averageRating} />
+            </div>
+          </div>
+
+          <div className="container">
+            <h1>Publisher</h1>
+            <div className="displaytest-text">{bookData.publisher}</div>
+          </div>
+
+          <div className="container">
+            <h1>Published Date</h1>
+            <div className="displaytest-text">{bookData.publishedDate}</div>
+          </div>
         </div>
       ) : (
         <div>no information found</div>

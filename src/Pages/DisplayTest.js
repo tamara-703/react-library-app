@@ -4,6 +4,7 @@ import MyLibrary from "./MyLibrary";
 import { useEffect, useRef, useState } from "react";
 import CurrentlyReading from "./CurrentlyReading";
 import GetAPI from "../Components/GetAPI";
+import GetRating from "../Services/GetRating";
 
 export default function DisplayTest(props) {
 
@@ -79,33 +80,64 @@ export default function DisplayTest(props) {
 
   return (
     <div>
-      <h1>This is the page where book information will be displayed</h1>
 
       {location.state ? (
         <div>
-          <div>Title: {location.state.volumeInfo.title}</div>
-          <div>Authors: {location.state.volumeInfo.authors}</div>
-          <div>Description: {location.state.volumeInfo.description}</div>
-          <div>Average rating: {location.state.volumeInfo.averageRating}</div>
-          <div>Publisher: {location.state.volumeInfo.publisher}</div>
-          <div>Published date: {location.state.volumeInfo.publishedDate}</div>
-          <aside>
+
+          <div className="img-container">
             <img
               src={location.state.volumeInfo.imageLinks.thumbnail}
-              alt={location.state.title}
+              alt={location.state.title} width="300px"
             ></img>
-          </aside>
+
+            <div>
+            <div className="displaytest-title">{location.state.volumeInfo.title}</div>
+            <div className="displaytest-author">Author: {location.state.volumeInfo.authors}</div>
+              </div>
+            </div>
+
+            <h1 className="displaytest-header">Description</h1>
+            <article className="displaytest-description">
+              <p>{location.state.volumeInfo.description}</p>
+            </article>
+
+            <br></br>
+
+            <div className="container">
+            <h1>Average Rating</h1>
+            <div><GetRating rating={location.state.volumeInfo.averageRating}/></div>
+            </div>
+
+
+          <div className="container">
+          <h1>Publisher</h1>
+          <div className="displaytest-text">{location.state.volumeInfo.publisher}</div>
+          </div>
+
+
+          <div className="container">
+          <h1>Published Date</h1>
+          <div className="displaytest-text">{location.state.volumeInfo.publishedDate}</div>
+          </div>
+
+
+
+          <br></br>
+          <br></br>
+          <br></br>
+
+
           <button onClick={handleRead}>Add to read</button>
           <button onClick={handleCurrentlyReading}>Add to currently reading</button>
           <button onClick={handleWantToRead}>Add to want to read</button>
 
 
-          <form onSubmit={handleReview}>
+          {/* <form onSubmit={handleReview}>
           <h5>Write a review</h5>
           <textarea ref={input} maxLength="150"></textarea>
           <input type="submit" value="submit"></input>
 
-          </form>
+          </form> */}
         </div>
 
 
