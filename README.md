@@ -2,7 +2,7 @@
 
 This project creates a simple library navigation app, using React framework and written in Javascript, HTML and CSS.
 
-## You can try out the app here(INSERT WEBPAGE LINK)
+## You can try out the app [here!](https://library-app-tamara703.onrender.com)
 
 
 ## Technologies used
@@ -14,8 +14,9 @@ Bootstrap
 
 ## Environments used
 ```
-INSERT THE ENVIRONMENT HERE
+Render
 ```
+
 
 ## Services
 
