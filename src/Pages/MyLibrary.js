@@ -3,12 +3,13 @@
 import { useState } from "react"
 import { Link } from "react-router-dom";
 import Read from "./Read";
+import Bookshelf from "./Bookshelf";
 
 export default function MyLibrary({bookCollection})
 {
 
-    // console.log("in my library");
-    // console.log(bookCollection);
+    console.log("in my library");
+    console.log(bookCollection);
 
 
     return (
@@ -20,7 +21,7 @@ export default function MyLibrary({bookCollection})
                     <li><Link to="/wanttoread">Want to read</Link></li>
                 </ul>
 
-        <Read bookCollection={bookCollection}/>
+        {bookCollection ? <Bookshelf bookCollection={bookCollection}/> : <h1>No books to display. Browse <Link to="/search">here!</Link></h1>}
         </div>
     )
 }

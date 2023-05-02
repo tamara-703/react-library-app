@@ -73,8 +73,43 @@ The project introduces the following functionalities:
 no installation required. You can click on the link above to get started
 
 
-## Screenshots
-INSERT HOME PAGE SCREENSHOT HERE
+# Screenshots
+
+### Home page
+![home page](./src/images/home-page.png)
+
+### Search page
+    * Search page has the option to filter through either paid or free e-books
+![search page](./src/images/search-page.png)
+
+### Search page
+    * The search engine will fetch the first ten results with the relevant search term
+![search page populated](./src/images/search-page-populated.png)
+
+### Book result
+    * Description of the selected book will display on click. The user can choose to add the book to the following three library sections
+        1. Read
+        2. Currently reading
+        3. Want to read
+![book results](./src/images/book-results.png)
+
+### My library (not populated)
+    * The my library page is empty by default. If a user chooses to select a book to read this page will become populated
+![my library empty](./src/images/my-library-empty.png)
+
+### My library with a chosen read book
+    * books that have been marked as read by the user will be displayed here
+![my library populated](./src/images/my-library-populated.png)
+
+### Books selected as "Currently reading" by the user will be displayed in the "Currently reading" subsection of the library
+![currently reading page populated](./src/images/currently-reading-populated.png)
+
+### The user can also remove a book from their list if they wish it
+    * The drop-down menu under the subsection title will allow the user to remove a book from their list
+![book removed from "Currently reading" subsection](./src/images/book-removed.png)
+
+
+
 
 
 ## Future contributions
