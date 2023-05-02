@@ -69,7 +69,7 @@ export default function Search()
     }
 
     return (
-        <div>
+        <div className="search-page">
             <h1>Search books</h1>
             <form onSubmit={handleSubmit}>
                 <div className="form-outline">

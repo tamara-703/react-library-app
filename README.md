@@ -1,15 +1,31 @@
-# Getting Started with Create React App
+# Library App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project creates a simple library navigation app, using React framework and written in Javascript, HTML and CSS.
+
+## You can try out the app here(INSERT WEBPAGE LINK)
+
+
+## Technologies used
+```
+React
+Bootstrap
+
+```
+
+## Environments used
+```
+INSERT THE ENVIRONMENT HERE
+```
+
+## Services
+
+`Google books API` You can find more information [here](https://developers.google.com/books/docs/v1/using#intro)
 
 ## Available Scripts
 
 In the project directory, you can run:
 
 ### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
@@ -39,32 +55,35 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Introduction
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The project introduces the following functionalities:
+1. Home page: this page displays the newly released books in non-fiction, fiction, mystery and more.
+2. My library: this page navigates to three sub sections:
+    * Read - books flagged as **read** by the user.
+    * Currently reading - books flagged as **currently read** by the user
+    * Want to read - books flagged as **want to read** by the user
 
-### Code Splitting
+3. Search: this page display the main search engine which will allow the user to browse books fetched directly from the **Google Books API**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Installation
+no installation required. You can click on the link above to get started
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Screenshots
+INSERT HOME PAGE SCREENSHOT HERE
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Future contributions
+1. Make the UI prettier!
+2. Refactor some method for reusability purposes
+3. Clean certain components of redundant/unused variables & methods
+4. Fix issue when clicking on a certain title on homepage, a **thumbnail no defined** error occurs
+5. Add functionality to the **Search Category** page where the user can browse books based on their genre
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Credits
+Thank you for all my instructors and fellow peers in the Per Scholas Cycle 10 for making this project logical and fun to make!

@@ -13,43 +13,72 @@ export default function Read({ bookCollection }) {
 
   useEffect(() => {
     setDeleted(bookCollection);
-  }, [deleted])
+  }, [deleted]);
 
   const handleDelete = (e) => {
-
     const name = e.target.getAttribute("name");
 
-    setDeleted(deleted.splice(name,1));
-  }
+    setDeleted(deleted.splice(name, 1));
+  };
+
+  const handleTest = (e) => {
+    const value = e.target[e.target.selectedIndex].value;
+
+    if(value === 'default')
+    {
+      return;
+    }
+
+    setDeleted(deleted.splice(value, 1));
+  };
 
   return (
     <div className="read-container">
       <h1 className="status-header">Read</h1>
+      <select id="delete-options" onChange={(e) => {handleTest(e)}}>
+        <option value="default">Select a book to delete</option>
+        {deleted ? (
+        deleted.map((item, index) => {
+          return (
+                <option value={index}>{item.title}</option>
+          );
+        })
+      ) : (
+        <div>no books to display</div>
+      )}
+      </select>
+
       {deleted ? (
         deleted.map((item, index) => {
-          // console.log(item)
           return (
             <div>
               <div className="header-container">
-              <p>Cover</p><p>Title</p><p>Author</p><p>Average Rating</p>
-                </div>
-
-            <div className="read-list">
+                <p>Cover</p>
+                <p>Title</p>
+                <p>Author</p>
+                <p>Average Rating</p>
+              </div>
+              {/* <button name={index} onClick={handleDelete}>
+                Remove
+              </button> */}
+              <div className="read-list">
                 <div>
-                  <img src={item.thumbnail} alt={item.title} width="200px" height="300px"></img>
+                  <img
+                    src={item.thumbnail}
+                    alt={item.title}
+                    width="200px"
+                    height="300px"
+                  ></img>
                 </div>
                 <div className="title-list">
-                <p className="title">{item.title}</p>
-                  <li>
-                    {item.subtitle}
-                  </li>
+                  <p className="title">{item.title}</p>
+                  <li>{item.subtitle}</li>
                 </div>
                 <div className="author">{item.authors}</div>
-                <div className="avg-rating"><GetRating rating={item.averageRating}/></div>
-            </div>
-            <div>
-              <button name={index} onClick = {handleDelete}>Remove</button>
-            </div>
+                <div className="avg-rating">
+                  <GetRating rating={item.averageRating} />
+                </div>
+              </div>
             </div>
           );
         })
@@ -59,9 +88,6 @@ export default function Read({ bookCollection }) {
     </div>
   );
 }
-
-
-
 
 // <div className="read-list">
 // <div>

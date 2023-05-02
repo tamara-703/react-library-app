@@ -3,7 +3,7 @@
 .nav {
     display: flex;
     justify-content: space-between;
-    background-color: purple;
+    background-color: grey;
     gap: 5px;
     color: white;
     padding: 15px;
@@ -11,15 +11,10 @@
 }
 
 .nav a {
-    color: white;
+    color: bisque;
     text-decoration: none;
     margin-right: 200px;
   }
-
-
-
-
-
 
 
 
@@ -34,19 +29,12 @@
 }
 
 
-
-
-
-
-
-
-
-
 /* DISPLAY BOOK INFO PAGE*/
 
 .title-link {
   display: flex;
   justify-content: flex-start;
   padding: 5px;
-  
+  color: white;
+
 }

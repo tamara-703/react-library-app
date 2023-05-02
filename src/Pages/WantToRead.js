@@ -13,15 +13,32 @@ export default function WantToRead({wantToRead})
 
   const handleDelete = (e) => {
 
-    const name = e.target.getAttribute("name");
+    const value = e.target[e.target.selectedIndex].value;
 
-    setDeleted(deleted.splice(name,1));
+    if(value === 'default')
+    {
+      return;
+    }
+
+    setDeleted(deleted.splice(value, 1));
 
   }
 
     return (
         <div>
           <h1 className="status-header">Want To Read</h1>
+          <select id="delete-options" onChange={(e) => {handleDelete(e)}}>
+        <option value="default">Select a book to delete</option>
+        {deleted ? (
+        deleted.map((item, index) => {
+          return (
+                <option value={index}>{item.title}</option>
+          );
+        })
+      ) : (
+        <div>no books to display</div>
+      )}
+      </select>
             {deleted ? deleted.map((item, index) => {
         return (
 
@@ -43,7 +60,6 @@ export default function WantToRead({wantToRead})
                 <div className="author">{item.authors}</div>
                 <div className="avg-rating"><GetRating rating={item.averageRating}/></div>
             </div>
-            <button name={index} onClick = {handleDelete}>Remove</button>
             </div>
           );
         }) : <div>No information found </div>}

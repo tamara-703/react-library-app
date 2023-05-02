@@ -1,25 +1,20 @@
+import {useState, useEffect} from 'react'
+
+export const RemoveBook = () => {
+
+  //   const [deleted, setDeleted] = useState([]);
+
+  // useEffect(() => {
+  //   setDeleted(bookCollection);
+  // }, [deleted])
+
+  // const handleDelete = (e) => {
+
+  //   const name = e.target.getAttribute("name");
+
+  //   setDeleted(deleted.splice(name,1));
+  // }
 
 
-export const RemoveBook = (temp) => {
-
-    console.log("in remove book");
-
-    let tempArr = [];
-    tempArr.push(temp)
-
-    //splice
-
-    
-
-
-    // return <div>
-    // {tempArr.map((item, i) => {
-    //       return (<div>
-    //         <div>{item}</div>
-    //         <button onClick ={(e) => deleteIngredient(e, item)}>X</button>
-    //         </div>)
-    //     })}
-
-    //     </div>
 
 }

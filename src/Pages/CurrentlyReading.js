@@ -18,16 +18,33 @@ export default function CurrentlyReading({currentlyReading})
 
   const handleDelete = (e) => {
 
-    const name = e.target.getAttribute("name");
+    const value = e.target[e.target.selectedIndex].value;
 
-    setDeleted(deleted.splice(name,1));
+    if(value === 'default')
+    {
+      return;
+    }
+
+    setDeleted(deleted.splice(value, 1));
   }
 
 
   return (
     <div>
       <h1 className="status-header">Currently reading</h1>
-        {currentlyReading ? currentlyReading.map((item,index) => {
+      <select id="delete-options" onChange={(e) => {handleDelete(e)}}>
+        <option value="default">Select a book to delete</option>
+        {deleted ? (
+        deleted.map((item, index) => {
+          return (
+                <option value={index}>{item.title}</option>
+          );
+        })
+      ) : (
+        <div>no books to display</div>
+      )}
+      </select>
+        {deleted ? deleted.map((item,index) => {
 
                         return (
                     <div>
@@ -49,7 +66,6 @@ export default function CurrentlyReading({currentlyReading})
                             <div className="author">{item.authors}</div>
                             <div className="avg-rating"><GetRating rating={item.averageRating}/></div>
                             </div>
-                            <button name={index} onClick = {handleDelete}>Remove</button>
                     </div>
           );
         })
