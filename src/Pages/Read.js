@@ -2,20 +2,34 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import MyLibrary from "./MyLibrary";
 import GetRating from "../Services/GetRating";
+import { RemoveBook } from "../Services/RemoveBook";
 
 export default function Read({ bookCollection }) {
   //state must be set to a useState and then the state of that useState should be displayed
   console.log("in read");
-  console.log(bookCollection);
+  // console.log(bookCollection);
+
+  const [deleted, setDeleted] = useState([]);
+
+  useEffect(() => {
+    setDeleted(bookCollection);
+  }, [deleted])
+
+  const handleDelete = (e) => {
+
+    const name = e.target.getAttribute("name");
+
+    setDeleted(deleted.splice(name,1));
+  }
 
   return (
-    <div>
-      {bookCollection ? (
-        bookCollection.map((item, index) => {
-          console.log(item)
+    <div className="read-container">
+      <h1 className="status-header">Read</h1>
+      {deleted ? (
+        deleted.map((item, index) => {
+          // console.log(item)
           return (
             <div>
-              <h1 className="status-header">Reading</h1>
               <div className="header-container">
               <p>Cover</p><p>Title</p><p>Author</p><p>Average Rating</p>
                 </div>
@@ -25,13 +39,16 @@ export default function Read({ bookCollection }) {
                   <img src={item.thumbnail} alt={item.title} width="200px" height="300px"></img>
                 </div>
                 <div className="title-list">
-                <p className="title" >{item.title}</p>
+                <p className="title">{item.title}</p>
                   <li>
                     {item.subtitle}
                   </li>
                 </div>
                 <div className="author">{item.authors}</div>
                 <div className="avg-rating"><GetRating rating={item.averageRating}/></div>
+            </div>
+            <div>
+              <button name={index} onClick = {handleDelete}>Remove</button>
             </div>
             </div>
           );

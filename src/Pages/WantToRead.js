@@ -1,18 +1,31 @@
 import { useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import GetRating from "../Services/GetRating";
 
 export default function WantToRead({wantToRead})
 {
 
+  const [deleted, setDeleted] = useState([]);
+
+  useEffect(() => {
+    setDeleted(wantToRead);
+  }, [deleted])
+
+  const handleDelete = (e) => {
+
+    const name = e.target.getAttribute("name");
+
+    setDeleted(deleted.splice(name,1));
+
+  }
+
     return (
         <div>
-            {wantToRead ? wantToRead.map((item, index) => {
-        console.log("In want to read state map " + item.title)
+          <h1 className="status-header">Want To Read</h1>
+            {deleted ? deleted.map((item, index) => {
         return (
 
           <div>
-              <h1 className="status-header">Want To Read</h1>
               <div className="header-container">
               <p>Cover</p><p>Title</p><p>Author</p><p>Average Rating</p>
                 </div>
@@ -30,6 +43,7 @@ export default function WantToRead({wantToRead})
                 <div className="author">{item.authors}</div>
                 <div className="avg-rating"><GetRating rating={item.averageRating}/></div>
             </div>
+            <button name={index} onClick = {handleDelete}>Remove</button>
             </div>
           );
         }) : <div>No information found </div>}

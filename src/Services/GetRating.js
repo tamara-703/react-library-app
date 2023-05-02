@@ -1,5 +1,7 @@
 export default function GetRating({ rating }) {
   Math.round(rating);
+  console.log("rating")
+  console.log(rating)
 
   return (
     <div>

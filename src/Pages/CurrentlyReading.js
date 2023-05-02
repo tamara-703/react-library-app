@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import GetRating from "../Services/GetRating";
 import './Pages.css'
 
@@ -8,22 +8,29 @@ export default function CurrentlyReading({currentlyReading})
 {
     console.log("in currently reading")
     console.log(currentlyReading)
-    // const location = useLocation();
 
-    // let state = location.state;
 
-  //console.log(state[0].title)
+    const [deleted, setDeleted] = useState([]);
 
-  //const [currentlyreading, setCurrentlyReading] = useState([]);
+  useEffect(() => {
+    setDeleted(currentlyReading);
+  }, [deleted])
+
+  const handleDelete = (e) => {
+
+    const name = e.target.getAttribute("name");
+
+    setDeleted(deleted.splice(name,1));
+  }
 
 
   return (
     <div>
+      <h1 className="status-header">Currently reading</h1>
         {currentlyReading ? currentlyReading.map((item,index) => {
 
                         return (
                     <div>
-                        <h1 className="status-header">Currently reading</h1>
                             <div className="header-container">
                             <p>Cover</p><p>Title</p><p>Author</p><p>Average Rating</p>
                             </div>
@@ -42,6 +49,7 @@ export default function CurrentlyReading({currentlyReading})
                             <div className="author">{item.authors}</div>
                             <div className="avg-rating"><GetRating rating={item.averageRating}/></div>
                             </div>
+                            <button name={index} onClick = {handleDelete}>Remove</button>
                     </div>
           );
         })
