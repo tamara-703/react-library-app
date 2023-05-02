@@ -119,6 +119,7 @@ no installation required. You can click on the link above to get started
 3. Clean certain components of redundant/unused variables & methods
 4. Fix issue when clicking on a certain title on homepage, a **thumbnail no defined** error occurs
 5. Add functionality to the **Search Category** page where the user can browse books based on their genre
+6. Add a function where the user clicks on one of the books on the home page and it gives them the option to add the selected book to their library
 
 
 ## Credits
