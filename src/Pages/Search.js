@@ -73,7 +73,8 @@ export default function Search()
             <h1>Search books</h1>
             <form onSubmit={handleSubmit}>
                 <div className="form-outline">
-                <input type="text"
+                <input  className="search-term"
+                        type="text"
                         name="search"
                         placeholder="enter book name"
                         ref={input}/>

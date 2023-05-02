@@ -252,3 +252,7 @@ body {
 .search-page {
     color: white;
 }
+
+.search-term {
+    color: black;
+}
