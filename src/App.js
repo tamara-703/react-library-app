@@ -25,7 +25,6 @@ function App() {
 
       let oldBookCollection = bookCollection;
 
-      // console.log(newBook);
       oldBookCollection = [...bookCollection, newBook[0]];
 
       setBookCollection(oldBookCollection);

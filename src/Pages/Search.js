@@ -90,6 +90,3 @@ export default function Search()
         </div>
     )
 }
-
-// onChange={handleChange}
-//value={formData}

@@ -25,22 +25,3 @@ export default function MyLibrary({bookCollection})
         </div>
     )
 }
-
-
-{/* <div>
-                {bookCollection ? bookCollection.map((item,index) => {
-                        return (
-                            <div>
-                                <ul>
-                                    <li><img src={item[index].thumbnail} alt={item[index].title}></img></li>
-                                    <li>Title: {item[index].title}</li>
-                                    <li><i>{item[index].subtitle}</i></li>
-                                    <li>Authors: {item[index].authors}</li>
-                                    <li>Average rating: {item[index].averageRating}</li>
-                                    <li>Publisher: {item[index].publisher}</li>
-                                    <li>Published Date: {item[index].publishedDate}</li>
-                                </ul>
-                            </div>
-                        )
-                    }) : <div>No information found</div>}
-            </div> */}
