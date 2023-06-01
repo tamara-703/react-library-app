@@ -8,13 +8,14 @@ This project creates a simple library navigation app, using React framework and 
 ## Technologies used
 ```
 React
+React-dom
 Bootstrap
 
 ```
 
 ## Environments used
 ```
-Render
+Render to deploy
 ```
 
 
